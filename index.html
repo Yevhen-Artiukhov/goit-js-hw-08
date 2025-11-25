@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Галерея</title>
+
+    <!-- СТИЛІ ПРОЄКТУ -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- basicLightbox CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css"
+    />
   </head>
   <body>
-    <ul class="gallery"></ul>
-    <script type="module" src="./js/gallery.js"></script>
+    <main class="page">
+      <h1 class="visually-hidden">Галерея зображень</h1>
+      <ul class="gallery"></ul>
+    </main>
+
+    <!-- basicLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+
+    <!-- ТВОЯ ГАЛЕРЕЯ -->
+    <script src="./js/gallery.js" type="module"></script>
   </body>
 </html>
