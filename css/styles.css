@@ -1,108 +1,50 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #f4f4f4;
-}
-
-/* Центруємо контент, як у макеті */
-.page {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 24px;
-}
-
-/* Галерея */
 .gallery {
     list-style: none;
-    margin: 0;
-    padding: 0;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-/* Картка галереї */
-.gallery-item {
-    overflow: hidden;
-}
-
-/* Посилання блочне, щоб картинка займала весь елемент */
-.gallery-link {
-    display: block;
-    text-decoration: none;
-}
-
-/* Зображення */
-.gallery-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    /* щоб усі карти однакові по висоті */
-    aspect-ratio: 4 / 3;
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* HOVER як на макеті (легке збільшення) */
-.gallery-link:hover .gallery-image,
-.gallery-link:focus .gallery-image {
-    transform: scale(1.03);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-}
-
-/* Модальне вікно (бекграунд) */
-.basicLightbox__placeholder {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1176px;
     justify-content: center;
 }
 
-.basicLightbox--visible {
-    background: rgba(58, 60, 70, 0.95);
-    /* сірий фон як на макеті */
+.gallery-item {
+    width: 360px;
+    height: 200px;
+    position: relative;
+    overflow: visible;
+    
 }
 
-/* Зображення в модалці */
-.basicLightbox__placeholder img {
-    max-width: 90vw;
-    max-height: 90vh;
+.gallery-link {
     display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-/* Адаптив: 2 колонки на планшеті */
-@media (max-width: 900px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Адаптив: 1 колонка на мобільному */
-@media (max-width: 600px) {
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Прихований заголовок (для доступності) */
-.visually-hidden {
+.gallery-image {
+    width: 360px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+}
 
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+.gallery-item:hover .gallery-image {
+    width: 376px;
+    height: 208px;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 }

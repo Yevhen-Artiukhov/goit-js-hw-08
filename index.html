@@ -2,27 +2,18 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Галерея</title>
-
-    <!-- СТИЛІ ПРОЄКТУ -->
-    <link rel="stylesheet" href="./css/styles.css" />
-
-    <!-- basicLightbox CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
     />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <main class="page">
-      <h1 class="visually-hidden">Галерея зображень</h1>
-      <ul class="gallery"></ul>
-    </main>
+    <ul class="gallery"></ul>
 
-    <!-- basicLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
-
-    <!-- ТВОЯ ГАЛЕРЕЯ -->
-    <script src="./js/gallery.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+    <script type="module" src="./js/gallery.js"></script>
   </body>
 </html>
